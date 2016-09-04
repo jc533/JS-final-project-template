@@ -25,4 +25,7 @@ function key(event){
   if(event.which === 100){
     ememy.x += 10
   }
+  if(event.which === 97){
+    ememy.x -= 10
+  }
 }
