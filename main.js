@@ -6,9 +6,6 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bgImg,0,0);
-}
-function draw2(){
-  ctx.drawImage(ememy,Math.random()*100,Math.random()*100);
+  ctx.drawImage(ememy,Math.random()*1000,Math.random()*1000);
 }
 setTimeout(draw,1000);
-setTimeout(draw2,1000);
