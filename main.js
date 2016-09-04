@@ -12,4 +12,4 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(eImg,ememy.x,ememy.y);
 }
-setTimeout(draw,1000);
+setInterval(draw,10);
