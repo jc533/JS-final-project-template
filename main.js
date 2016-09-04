@@ -8,7 +8,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
 }
 function draw2(){
-  ctx.drawImage(ememy,0,0);
+  ctx.drawImage(ememy,50,50);
 }
 setTimeout(draw,1000);
 setTimeout(draw2,1000);
