@@ -13,3 +13,7 @@ function draw(){
   ctx.drawImage(eImg,ememy.x,ememy.y);
 }
 setInterval(draw,10);
+$("body").on("keypress",key);
+function key(event){
+  console.log(event.which)
+}
