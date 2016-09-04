@@ -16,4 +16,7 @@ setInterval(draw,10);
 $("body").on("keypress",key);
 function key(event){
   console.log(event.which)
+  if(event.which === 119){
+    ememy.y -= 10
+  }
 }
