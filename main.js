@@ -21,4 +21,5 @@ function key(event){
   }
   if(event.which === 115){
     ememy.y += 10
+  }
 }
