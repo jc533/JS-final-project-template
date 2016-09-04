@@ -16,4 +16,5 @@ setTimeout(draw,1000);
 for(var i = 1;i<90;i++){
   ememy.x += Math.random()*10
   ememy.y += Math.random()*10
+  draw();
 }
