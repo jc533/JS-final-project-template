@@ -17,7 +17,7 @@ $("body").on("keypress",key);
 function key(event){
   console.log(event.which)
   if(event.which === 119){
-    ememy.y -= 5
+    ememy.y -= 50
   }
   if(event.which === 115){
     ememy.y += 5
