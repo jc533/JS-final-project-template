@@ -19,4 +19,6 @@ function key(event){
   if(event.which === 119){
     ememy.y -= 10
   }
+  if(event.which === 115){
+    ememy.y += 10
 }
