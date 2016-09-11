@@ -28,7 +28,7 @@ function draw(){
     ctx.drawImage(towImg,cursor.x,cursor.y);
   }
 }
-setInterval(draw,8);
+setInterval(draw,16);
 $("#game-canvas").on("click",function(){
   if(cursor.x >= 640-64 && cursor.y >= 480-64){
     console.log("click");
