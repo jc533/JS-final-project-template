@@ -28,7 +28,7 @@ setInterval(draw,16);
 $("#game-canvas").on("mousemove",function(event){
   tower.x = event.offsetX;
   tower.y = event.offsetY;
-  console.log("x:"+event.offsetX,"y:"+event.offsetY);
+  console.log("x:"+event.offsetX+"y:"+event.offsetY);
 });
 $("body").on("keypress",key);
 function key(event){
