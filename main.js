@@ -1,5 +1,5 @@
 var bgImg = document.createElement("img");
-bgImg.src = "images/gamemap.png";
+bgImg.src = "images/gamemap.bmp";
 var eImg = document.createElement("img");
 eImg.src = "images/rukia.gif";
 var towbtnImg = document.createElement("img");
