@@ -38,8 +38,10 @@ $("#game-canvas").on("click",function(){
       isBuilding = true;
     }
   }else{
-    tower.x = causor.x
-    tower.y = causer.y
+    if(isBuilding == true){
+      tower.x = cursor.x;
+      tower.y = cursor.y;
+    }
   }
 });
 $("#game-canvas").on("mousemove",function(event){
