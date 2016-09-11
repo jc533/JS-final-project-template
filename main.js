@@ -2,15 +2,19 @@ var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var eImg = document.createElement("img");
 eImg.src = "images/rukia.gif";
+var tImg = document.createElement("img");
+tImg.src = "images/tower-btn.png";
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var ememy = {
   x:10,
   y:10
 };
+
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(eImg,ememy.x,ememy.y);
+  ctx.drawImage(tImg,608,448,32,32);
 }
 setInterval(draw,10);
 $("body").on("keypress",key);
