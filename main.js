@@ -2,8 +2,8 @@ var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var eImg = document.createElement("img");
 eImg.src = "images/rukia.gif";
-var tImg = document.createElement("img");
-tImg.src = "images/tower-btn.png";
+var towbtnImg = document.createElement("img");
+towbtnImg.src = "images/tower-btn.png";
 var towImg = document.createElement("img");
 towImg.src = "images/tower.png";
 
@@ -21,7 +21,7 @@ var ememy = {
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(eImg,ememy.x,ememy.y);
-  ctx.drawImage(tImg,640-64,480-64,64,64);
+  ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   ctx.drawImage(towImg,tower.x,tower.y);
 }
 setInterval(draw,16);
