@@ -14,22 +14,22 @@ var ememy = {
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(eImg,ememy.x,ememy.y);
-  ctx.drawImage(tImg,640-60,480-60,60,60);
+  ctx.drawImage(tImg,640-64,480-64,64,64);
 }
 setInterval(draw,16);
 $("body").on("keypress",key);
 function key(event){
   console.log(event.which)
   if(event.which === 119){
-    ememy.y -= 5
+    ememy.y -= 0.1
   }
   if(event.which === 115){
-    ememy.y += 5
+    ememy.y += 0.1
   }
   if(event.which === 100){
-    ememy.x += 5
+    ememy.x += 0.1
   }
   if(event.which === 97){
-    ememy.x -= 5
+    ememy.x -= 0.1
   }
 }
