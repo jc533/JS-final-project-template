@@ -13,6 +13,7 @@ var cursor = {
   x:0,
   y:0
 };
+var tower = {x:0,y:0};
 var ememy = {
   x:10,
   y:10,
@@ -21,6 +22,7 @@ var ememy = {
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(eImg,ememy.x,ememy.y);
+  ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
@@ -35,6 +37,9 @@ $("#game-canvas").on("click",function(){
     }else{
       isBuilding = true;
     }
+  }else{
+    tower.x = causor.x
+    tower.y = causer.y
   }
 });
 $("#game-canvas").on("mousemove",function(event){
