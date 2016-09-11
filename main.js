@@ -14,9 +14,9 @@ var ememy = {
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(eImg,ememy.x,ememy.y);
-  ctx.drawImage(tImg,640-50,480-50,50,50);
+  ctx.drawImage(tImg,640-60,480-60,60,60);
 }
-setInterval(draw,10);
+setInterval(draw,16);
 $("body").on("keypress",key);
 function key(event){
   console.log(event.which)
