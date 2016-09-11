@@ -6,7 +6,7 @@ var towbtnImg = document.createElement("img");
 towbtnImg.src = "images/tower-btn.png";
 var towImg = document.createElement("img");
 towImg.src = "images/tower.png";
-
+var isBuilding = false
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var tower = {
@@ -22,12 +22,21 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(eImg,ememy.x,ememy.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
-  ctx.drawImage(towImg,tower.x,tower.y);
+  ctx.drawImage(towImg,cursor.x,cursor.y);
 }
 setInterval(draw,16);
+$("#game-canvas").on("click",function(){
+  if(causor.x >= 640-64 && causor.y >= 480-64){
+    if(isBuilding == true){
+      isBuilding = false 
+    }else{
+      isBuilding = true
+    }
+  }
+});
 $("#game-canvas").on("mousemove",function(event){
-  tower.x = event.offsetX;
-  tower.y = event.offsetY;
+  cursor.x = event.offsetX;
+  cursor.y = event.offsetY;
 });
 $("body").on("keypress",key);
 function key(event){
