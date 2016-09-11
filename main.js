@@ -8,7 +8,8 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var ememy = {
   x:10,
-  y:10
+  y:10,
+  v:[1,1]
 };
 
 function draw(){
@@ -21,15 +22,19 @@ $("body").on("keypress",key);
 function key(event){
   console.log(event.which)
   if(event.which === 119){
-    ememy.y -= 1.1
+    ememy.y -= ememy.v[1]
+    ememy.v[1] *= 1.1
   }
   if(event.which === 115){
-    ememy.y += 1.1
+    ememy.y += ememy.v[1]
+    ememy.v[1] *= 1.1
   }
   if(event.which === 100){
-    ememy.x += 1.1
+    ememy.x += ememy.v[0]
+    ememy.v[0] *= 1.1
   }
   if(event.which === 97){
-    ememy.x -= 1.1
+    ememy.x -= ememy.v[0]
+    ememy.v[0] *= 1.1
   }
 }
