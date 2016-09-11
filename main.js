@@ -22,16 +22,18 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(eImg,ememy.x,ememy.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
-  ctx.drawImage(towImg,cursor.x,cursor.y);
+  if(isBuilding == true){
+    ctx.drawImage(towImg,cursor.x,cursor.y);
+  }
 }
 setInterval(draw,16);
 $("#game-canvas").on("click",function(){
   if(cursor.x >= 640-64 && cursor.y >= 480-64){
-    console.log("click")
+    console.log("click");
     if(isBuilding == true){
-      isBuilding = false 
+      isBuilding = false ;
     }else{
-      isBuilding = true
+      isBuilding = true;
     }
   }
 });
