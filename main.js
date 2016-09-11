@@ -39,14 +39,14 @@ $("#game-canvas").on("click",function(){
     }
   }else{
     if(isBuilding == true){
-      tower.x = cursor.x - (cursor.x % 32);
-      tower.y = cursor.y - (cursor.y % 32);
+      tower.x = cursor.x;
+      tower.y = cursor.y;
     }
   }
 });
 $("#game-canvas").on("mousemove",function(event){
-  cursor.x = event.offsetX;
-  cursor.y = event.offsetY;
+  cursor.x = event.offsetX - (event.offsetX % 32);
+  cursor.y = event.offsetY - (event.offsetX % 32);
 });
 $("body").on("keypress",key);
 function key(event){
