@@ -5,7 +5,7 @@ eImg.src = "images/rukia.gif";
 var tImg = document.createElement("img");
 tImg.src = "images/tower-btn.png";
 var towImg = document.createElement("img");
-eImg.src = "images/tower.png";
+towImg.src = "images/tower.png";
 
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
