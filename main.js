@@ -9,7 +9,7 @@ towImg.src = "images/tower.png";
 var isBuilding = false
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-var curser = {
+var cursor = {
   x:0,
   y:0
 };
