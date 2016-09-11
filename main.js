@@ -9,7 +9,7 @@ towImg.src = "images/tower.png";
 var isBuilding = false
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-var causer = {
+var curser = {
   x:0,
   y:0
 };
@@ -26,7 +26,7 @@ function draw(){
 }
 setInterval(draw,16);
 $("#game-canvas").on("click",function(){
-  if(causor.x >= 640-64 && causor.y >= 480-64){
+  if(cursor.x >= 640-64 && cursor.y >= 480-64){
     console.log("click")
     if(isBuilding == true){
       isBuilding = false 
