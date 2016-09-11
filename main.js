@@ -25,7 +25,7 @@ function draw(){
   ctx.drawImage(towImg,tower.x,tower.y);
 }
 setInterval(draw,16);
-$("game-canvas").on("mousemove",function(event){
+$("#game-canvas").on("mousemove",function(event){
   tower.x = event.offsetX;
   tower.y = event.offsetY;
   console.log(event.offsetX + event.offsetY);
@@ -34,19 +34,19 @@ $("body").on("keypress",key);
 function key(event){
   // console.log(event.which)
   if(event.which === 119){
-    ememy.y -= ememy.v[1]
-    ememy.v[1] *= 1.1
+    ememy.y -= ememy.v[1];
+    ememy.v[1] *= 1.1;
   }
   if(event.which === 115){
-    ememy.y += ememy.v[1]
-    ememy.v[1] *= 1.1
+    ememy.y += ememy.v[1];
+    ememy.v[1] *= 1.1;
   }
   if(event.which === 100){
-    ememy.x += ememy.v[0]
-    ememy.v[0] *= 1.1
+    ememy.x += ememy.v[0];
+    ememy.v[0] *= 1.1;
   }
   if(event.which === 97){
-    ememy.x -= ememy.v[0]
-    ememy.v[0] *= 1.1
+    ememy.x -= ememy.v[0];
+    ememy.v[0] *= 1.1;
   }
 }
