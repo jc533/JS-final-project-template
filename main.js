@@ -21,15 +21,15 @@ $("body").on("keypress",key);
 function key(event){
   console.log(event.which)
   if(event.which === 119){
-    ememy.y -= 0.1
+    ememy.y -= 1.1
   }
   if(event.which === 115){
-    ememy.y += 0.1
+    ememy.y += 1.1
   }
   if(event.which === 100){
-    ememy.x += 0.1
+    ememy.x += 1.1
   }
   if(event.which === 97){
-    ememy.x -= 0.1
+    ememy.x -= 1.1
   }
 }
