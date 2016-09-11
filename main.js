@@ -28,25 +28,28 @@ setInterval(draw,16);
 $("#game-canvas").on("mousemove",function(event){
   tower.x = event.offsetX;
   tower.y = event.offsetY;
-  console.log("x:"+event.offsetX+"y:"+event.offsetY);
 });
 $("body").on("keypress",key);
 function key(event){
   // console.log(event.which)
   if(event.which === 119){
     ememy.y -= ememy.v[1];
-    ememy.v[1] *= 1.1;
+    ememy.v[1] += 1.1;
+    ememy.v[1] *= 0.8;
   }
   if(event.which === 115){
     ememy.y += ememy.v[1];
-    ememy.v[1] *= 1.1;
+    ememy.v[1] += 1.1;
+    ememy.v[1] *= 0.8;
   }
   if(event.which === 100){
     ememy.x += ememy.v[0];
-    ememy.v[0] *= 1.1;
+    ememy.v[0] += 1.1;
+    ememy.v[1] *= 0.8;
   }
   if(event.which === 97){
     ememy.x -= ememy.v[0];
-    ememy.v[0] *= 1.1;
+    ememy.v[0] += 1.1;
+    ememy.v[1] *= 0.8;
   }
 }
