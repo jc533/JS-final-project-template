@@ -9,7 +9,7 @@ towImg.src = "images/tower.png";
 
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-var tower{
+var tower = {
   x:0,
   y:0
 };
