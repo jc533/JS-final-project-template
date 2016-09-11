@@ -46,7 +46,7 @@ $("#game-canvas").on("click",function(){
 });
 $("#game-canvas").on("mousemove",function(event){
   cursor.x = event.offsetX - (event.offsetX % 32);
-  cursor.y = event.offsetY - (event.offsetX % 32);
+  cursor.y = event.offsetY - (event.offsetY % 32);
 });
 $("body").on("keypress",key);
 function key(event){
