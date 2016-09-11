@@ -27,6 +27,7 @@ function draw(){
 setInterval(draw,16);
 $("#game-canvas").on("click",function(){
   if(causor.x >= 640-64 && causor.y >= 480-64){
+    console.log("click")
     if(isBuilding == true){
       isBuilding = false 
     }else{
