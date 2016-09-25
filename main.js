@@ -17,6 +17,8 @@ var tower = {x:0,y:0};
 var ememy = {
   x:96,
   y:448,
+  speedx:0,
+  speedy:-64
 };
 function draw(){
   ctx.drawImage(bgImg,0,0);
