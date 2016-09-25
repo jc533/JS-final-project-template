@@ -19,13 +19,18 @@ var enemy = {
   x:96,
   y:448,
   speedx:0,
-  speedy:-64
+  speedy:-64,
+  move: function(){
+    x += speed.x/FPS
+    y += speed.y/FPS
+  }  
 };
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(eImg,enemy.x,enemy.y);
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
+  enemy.move()
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
   }
