@@ -15,7 +15,7 @@ var cursor = {
   y:0
 };
 var tower = {x:0,y:0};
-var ememy = {
+var enemy = {
   x:96,
   y:448,
   speedx:0,
@@ -23,7 +23,7 @@ var ememy = {
 };
 function draw(){
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(eImg,ememy.x,ememy.y);
+  ctx.drawImage(eImg,enemy.x,enemy.y);
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   if(isBuilding == true){
