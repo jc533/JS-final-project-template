@@ -21,8 +21,8 @@ var enemy = {
   speedx:0,
   speedy:-64,
   move: function(){
-    x += speed.x/FPS
-    y += speed.y/FPS
+    x += speedx/FPS
+    y += speedy/FPS
   }  
 };
 function draw(){
