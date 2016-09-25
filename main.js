@@ -1,3 +1,6 @@
+var canvas = document.getElementById("game-canvas");
+var ctx = canvas.getContext("2d");
+var FPS = 60
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var eImg = document.createElement("img");
@@ -7,8 +10,6 @@ towbtnImg.src = "images/tower-btn.png";
 var towImg = document.createElement("img");
 towImg.src = "images/tower.png";
 var isBuilding = false
-var canvas = document.getElementById("game-canvas");
-var ctx = canvas.getContext("2d");
 var cursor = {
   x:0,
   y:0
@@ -29,7 +30,7 @@ function draw(){
     ctx.drawImage(towImg,cursor.x,cursor.y);
   }
 }
-setInterval(draw,16);
+setInterval(draw,1000/FPS);
 $("#game-canvas").on("click",function(){
   if(cursor.x >= 640-64 && cursor.y >= 480-64){
     console.log("click");
