@@ -33,12 +33,12 @@ var enemy = {
       }else if(enemyPath[this.pathDes].x > enemyPath[this.pathDes].x){
         this.speedx = 64;
       }
-      if(enemyPath[this.pathDes].x == enemyPath[this.pathDes].x){
-        this.speedx = 0;
-      }else if(enemyPath[this.pathDes].x < enemyPath[this.pathDes].x){
-        this.speedx = -64;
-      }else if(enemyPath[this.pathDes].x > enemyPath[this.pathDes].x){
-        this.speedx = 64;
+      if(enemyPath[this.pathDes].y == enemyPath[this.pathDes].y){
+        this.speedy = 0;
+      }else if(enemyPath[this.pathDes].y < enemyPath[this.pathDes].y){
+        this.speedy = -64;
+      }else if(enemyPath[this.pathDes].y > enemyPath[this.pathDes].y){
+        this.speedy = 64;
       this.pathDes ++;
       }
     }else{
