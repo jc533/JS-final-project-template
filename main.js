@@ -49,6 +49,7 @@ var enemy = {
   }  
 };
 function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
+  console.log("hi")
   if(enemyX >= pathX - speedX && enemyX <= pathX + speedX){
     if(enemyY >= pathY - speedY && enemyY <= pathY + speedY){
       return true;
