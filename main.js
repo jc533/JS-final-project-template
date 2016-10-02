@@ -26,20 +26,20 @@ var enemy = {
     if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speedx/FPS,this.speedy/FPS) == true){
       this.x = enemyPath[this.pathDes].x;
       this.y = enemyPath[this.pathDes].y;
-      if(enemyPath[this.pathDes].x == enemyPath[this.pathDes].x){
+      this.pathDes ++;
+      if(this.x == enemyPath[this.pathDes].x){
         this.speedx = 0;
-      }else if(enemyPath[this.pathDes].x < enemyPath[this.pathDes].x){
+      }else if(this.x < enemyPath[this.pathDes].x){
         this.speedx = -64;
-      }else if(enemyPath[this.pathDes].x > enemyPath[this.pathDes].x){
+      }else if(this.x > enemyPath[this.pathDes].x){
         this.speedx = 64;
       }
-      if(enemyPath[this.pathDes].y == enemyPath[this.pathDes].y){
+      if(this.y == enemyPath[this.pathDes].y){
         this.speedy = 0;
-      }else if(enemyPath[this.pathDes].y < enemyPath[this.pathDes].y){
+      }else if(this.y < enemyPath[this.pathDes].y){
         this.speedy = -64;
-      }else if(enemyPath[this.pathDes].y > enemyPath[this.pathDes].y){
+      }else if(this.y > enemyPath[this.pathDes].y){
         this.speedy = 64;
-      this.pathDes ++;
       }
     }else{
       this.x += this.speedx/FPS;
