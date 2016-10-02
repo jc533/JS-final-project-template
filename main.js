@@ -9,8 +9,8 @@ var towbtnImg = document.createElement("img");
 towbtnImg.src = "images/tower-btn.png";
 var towImg = document.createElement("img");
 towImg.src = "images/tower.png";
-var isBuilding = false
-var enemyPath = [{x: 96, y: 64},{x: 384, y: 64},{x: 384, y: 192},{x: 224, y: 192},{x: 224, y: 320},{x: 544, y: 320}]
+var isBuilding = false;;
+var enemyPath = [{x: 96, y: 64},{x: 384, y: 64},{x: 384, y: 192},{x: 224, y: 192},{x: 224, y: 320},{x: 544, y: 320}];
 var cursor = {
   x:0,
   y:0
@@ -29,10 +29,10 @@ var enemy = {
 function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
   if(enemyX >= pathX - speedX && enemyX <= pathX + speedX){
     if(enemyY >= pathY - speedY && enemyY <= pathY + speedY){
-      return true
+      return true;
     }
   }
-  return false
+  return false;
 }
 function draw(){
   ctx.drawImage(bgImg,0,0);
