@@ -33,16 +33,16 @@ var enemy = {
       if(this.x == enemyPath[this.pathDes].x){
         this.speedx = 0;
       }else if(this.x < enemyPath[this.pathDes].x){
-        this.speedx = -64;
-      }else if(this.x > enemyPath[this.pathDes].x){
         this.speedx = 64;
+      }else if(this.x > enemyPath[this.pathDes].x){
+        this.speedx = -64;
       }
       if(this.y == enemyPath[this.pathDes].y){
         this.speedy = 0;
       }else if(this.y < enemyPath[this.pathDes].y){
-        this.speedy = -64;
-      }else if(this.y > enemyPath[this.pathDes].y){
         this.speedy = 64;
+      }else if(this.y > enemyPath[this.pathDes].y){
+        this.speedy = -64;
       }
     }else{
       this.x += this.speedx/FPS;
