@@ -19,11 +19,12 @@ var tower = {x:0,y:0};
 var enemy = {
   x:96,
   y:448,
+  speed:64,
   speedx:0,
   speedy:-64,
   pathDes:0,
   move: function(){
-    console.log(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speedx/FPS,this.speedy/FPS))
+    console.log(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS))
     if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speedx/FPS,this.speedy/FPS) === true){
       this.x = enemyPath[this.pathDes].x;
       this.y = enemyPath[this.pathDes].y;
