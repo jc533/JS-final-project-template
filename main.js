@@ -21,9 +21,30 @@ var enemy = {
   y:448,
   speedx:0,
   speedy:-64,
+  pathDes:0,
   move: function(){
-    this.x += this.speedx/FPS
-    this.y += this.speedy/FPS
+    if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speedx/FPS,this.speedy/FPS) == true){
+      this.x = enemyPath[this.pathDes].x
+      this.y = enemyPath[this.pathDes].y
+      if(enemyPath[this.pathDes].x == enemyPath[this.pathDes].x){
+        this.speedx = 0
+      }else if(enemyPath[this.pathDes].x < enemyPath[this.pathDes].x){
+        this.speedx = -64
+      }else if(enemyPath[this.pathDes].x > enemyPath[this.pathDes].x){
+        this.speedx = 64
+      }
+      if(enemyPath[this.pathDes].x == enemyPath[this.pathDes].x){
+        this.speedx = 0
+      }else if(enemyPath[this.pathDes].x < enemyPath[this.pathDes].x){
+        this.speedx = -64
+      }else if(enemyPath[this.pathDes].x > enemyPath[this.pathDes].x){
+        this.speedx = 64
+      this.pathDes ++
+      }
+    }else{
+      this.x += this.speedx/FPS
+      this.y += this.speedy/FPS
+    }
   }  
 };
 function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
