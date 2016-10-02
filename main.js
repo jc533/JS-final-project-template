@@ -26,6 +26,14 @@ var enemy = {
     this.y += this.speedy/FPS
   }  
 };
+function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
+  if(enemyX >= pathX - speedX && enemyX <= pathX + speedX){
+    if(enemyY >= pathY - speedY && enemyY <= pathY + speedY){
+      return true
+    }
+  }
+  return false
+}
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(eImg,enemy.x,enemy.y);
