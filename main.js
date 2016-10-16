@@ -1,6 +1,8 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 60
+var enemies = []
+var clock = 0
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var eImg = document.createElement("img");
@@ -50,7 +52,7 @@ function Enemy()  {
     }
   }  
 };
-var enemy = new Enemy();
+// enemies.push(new Enemy());
 function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
   if(enemyX >= pathX - speedX && enemyX <= pathX + speedX){
     if(enemyY >= pathY - speedY && enemyY <= pathY + speedY){
@@ -60,11 +62,17 @@ function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
   return false;
 }
 function draw(){
+  clock++
+  if(clock%80 == 0){
+    enemies.push(new Enemy())
+  }
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(eImg,enemy.x,enemy.y);
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
-  enemy.move()
+  for(var i = 0;i<=enemies.length;i++){
+    ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
+    enemies[i].move();
+  }
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
   }
