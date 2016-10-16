@@ -104,5 +104,5 @@ $("#game-canvas").on("mousemove",function(event){
   cursor.y = event.offsetY - (event.offsetY % 32);
 });
 $("body").on("keypress",function(event){
-  console.log(event.which)
+  console.log(event.which);
 });
