@@ -105,7 +105,7 @@ $("#game-canvas").on("mousemove",function(event){
 });
 $("body").on("keypress",function(event){
   if(event.which == 119){
-    keyp[w] = true
+    keyp.w = true
   }
   if(event.which == 97){
     keyp.a = true
