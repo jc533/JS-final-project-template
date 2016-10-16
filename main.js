@@ -64,7 +64,7 @@ function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
 function draw(){
   clock++
   if(clock%80 == 0){
-    enemies.push(new Enemy())
+    enemies.push(new Enemy());
   }
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towImg,tower.x,tower.y);
