@@ -108,13 +108,13 @@ $("body").on("keypress",function(event){
     keyp[w] = true
   }
   if(event.which == 97){
-    keyp[a] = true
+    keyp.a = true
   }
   if(event.which == 115){
-    keyp[s] = true
+    keyp.s = true
   }
   if(event.which == 100){
-    keyp[d] = true
+    keyp.d = true
   }
   console.log(event.which)
 });
