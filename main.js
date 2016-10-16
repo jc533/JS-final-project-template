@@ -69,7 +69,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
-  for(var i = 0;i<=enemies.length;i++){
+  for(var i = 0;i<enemies.length;i++){
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
   }
