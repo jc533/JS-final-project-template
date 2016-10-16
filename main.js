@@ -2,7 +2,7 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 60;
 var enemies = [];
-var Key = {W:false,a:false,s:false,d:false};
+var keyp = {w:false,a:false,s:false,d:false};
 var clock = 0;
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
@@ -105,16 +105,16 @@ $("#game-canvas").on("mousemove",function(event){
 });
 $("body").on("keypress",function(event){
   if(event.which == 119){
-    Key[w] = true
+    keyp[w] = true
   }
   if(event.which == 97){
-    Key[a] = true
+    keyp[a] = true
   }
   if(event.which == 115){
-    Key[s] = true
+    keyp[s] = true
   }
   if(event.which == 100){
-    Key[d] = true
+    keyp[d] = true
   }
   console.log(event.which)
 });
