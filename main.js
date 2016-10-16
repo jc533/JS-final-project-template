@@ -2,6 +2,7 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 60
 var enemies = []
+var key = {W:false,a:false,s:false,d:false}
 var clock = 0
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
