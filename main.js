@@ -24,11 +24,11 @@ var enemy = {
   speedy:-64,
   pathDes:0,
   move: function(){
-    console.log(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS))
+//     console.log(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS))
     if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS) === true){
       this.x = enemyPath[this.pathDes].x;
       this.y = enemyPath[this.pathDes].y;
-      console.log(this.x,this.y);
+//       console.log(this.x,this.y);
       this.pathDes ++;
       if(this.x == enemyPath[this.pathDes].x){
         this.speedx = 0;
@@ -88,4 +88,3 @@ $("#game-canvas").on("mousemove",function(event){
   cursor.x = event.offsetX - (event.offsetX % 32);
   cursor.y = event.offsetY - (event.offsetY % 32);
 });
-
