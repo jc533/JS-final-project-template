@@ -70,8 +70,8 @@ function draw(){
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   for(var i = 0;i<=enemies.length;i++){
-    ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
     enemies[i].move();
+    ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
   }
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
