@@ -11,13 +11,17 @@ var towbtnImg = document.createElement("img");
 towbtnImg.src = "images/tower-btn.png";
 var towImg = document.createElement("img");
 towImg.src = "images/tower.png";
+var rImg = document.createElement("img");
+rImg.src = "images/rukia.gif";
 var isBuilding = false;;
 var enemyPath = [{x: 96, y: 64},{x: 384, y: 64},{x: 384, y: 192},{x: 224, y: 192},{x: 224, y: 320},{x: 544, y: 320},{x:544,y:96}];
-var cursor = {
-  x:0,
-  y:0
-};
+var cursor = {x:0,y:0};
 var tower = {x:0,y:0};
+var rukia = {
+  x:0,
+  y:0,
+  v:[0,0]
+};
 function Enemy()  {
   this.x = 96;
   this.y = 448;
@@ -69,6 +73,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
+  ctx.drawImage(rImg,rukia.x,rukia.y);
   for(var i = 0;i<enemies.length;i++){
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
