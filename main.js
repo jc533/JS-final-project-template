@@ -17,12 +17,12 @@ var cursor = {
 };
 var tower = {x:0,y:0};
 function Enemy()  {
-  this.x = 96
-  this.y = 448
-  this.speed = 64
-  this.speedx = 0
-  this.speedy = -64
-  this.pathDes = 0
+  this.x = 96;
+  this.y = 448;
+  this.speed = 64;
+  this.speedx = 0;
+  this.speedy = -64;
+  this.pathDes = 0;
   this.move = function(){
 //     console.log(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS))
     if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS) === true){
@@ -50,7 +50,7 @@ function Enemy()  {
     }
   }  
 };
-var enemy = new Enemy() 
+var enemy = new Enemy();
 function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
   if(enemyX >= pathX - speedX && enemyX <= pathX + speedX){
     if(enemyY >= pathY - speedY && enemyY <= pathY + speedY){
@@ -89,4 +89,6 @@ $("#game-canvas").on("mousemove",function(event){
   cursor.x = event.offsetX - (event.offsetX % 32);
   cursor.y = event.offsetY - (event.offsetY % 32);
 });
-$("body").on("keypress",function(event){console.log(event.which)})
+$("body").on("keypress",function(event){
+  console.log(event.keycode)
+});
