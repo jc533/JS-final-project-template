@@ -10,7 +10,7 @@ towbtnImg.src = "images/tower-btn.png";
 var towImg = document.createElement("img");
 towImg.src = "images/tower.png";
 var isBuilding = false;;
-var enemyPath = [{x: 96, y: 64},{x: 384, y: 64},{x: 384, y: 192},{x: 224, y: 192},{x: 224, y: 320},{x: 544, y: 320}];
+var enemyPath = [{x: 96, y: 64},{x: 384, y: 64},{x: 384, y: 192},{x: 224, y: 192},{x: 224, y: 320},{x: 544, y: 320},{544,96}];
 var cursor = {
   x:0,
   y:0
