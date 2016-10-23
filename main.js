@@ -30,8 +30,8 @@ var tower = {
   searchEnemy:function(){
     this.aimingEnemyId = null;
     for(var i = 0;i<enemies.length;i++){
-      var distance = math.sqrt(
-        math.pow(this.x - enemies[i].x,2)+math.pow(this.y - enemies[i].y,2)
+      var distance = Math.sqrt(
+        Math.pow(this.x - enemies[i].x,2) + Math.pow(this.y - enemies[i].y,2)
       );
      if(distance <= range){
        this.aimingEnemyId = i;
