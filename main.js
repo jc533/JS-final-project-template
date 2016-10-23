@@ -3,6 +3,7 @@ var ctx = canvas.getContext("2d");
 ctx.font = "24px Arial";
 ctx.fillStyle = "white";
 var FPS = 60;
+var hp = 100;
 var enemies = [];
 var keyp = {w:false,a:false,s:false,d:false};
 var clock = 0;
@@ -24,6 +25,7 @@ var rukia = {
   x:0,
   y:0,
   v:[0,0]
+//   move:function(){}
 };
 function Enemy()  {
   this.x = 96;
@@ -77,7 +79,7 @@ function draw(){
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   ctx.drawImage(rImg,rukia.x,rukia.y);
-  ctx.fillText("HP",20,20);
+  ctx.fillText("HP"+hp,10,50);
   for(var i = 0;i<enemies.length;i++){
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
