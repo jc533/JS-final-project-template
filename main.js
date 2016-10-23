@@ -105,13 +105,13 @@ function draw(){
   ctx.fillText("HP:"+hp,10,50);
   for(var i = 0;i<enemies.length;i++){
     if(enemies[i].hp<1){
-      enemies.splice(i,1)    
+      enemies.splice(i,1);    
     }else{
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
     }
     if(tower.aimingEnemyId != null){
-      var id = tower.aimingEnemyId
+      var id = tower.aimingEnemyId;
       ctx.drawImage(croImg,enemies[id].x,enemies[id].y);
     }
   }
