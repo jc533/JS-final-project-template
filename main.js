@@ -116,7 +116,7 @@ $("#game-canvas").on("mousemove",function(event){
   cursor.x = event.offsetX - (event.offsetX % 32);
   cursor.y = event.offsetY - (event.offsetY % 32);
 });
-$("body").on("keypress",function(event){
+$("body").on("keydown",function(event){
   if(event.which == 119){
     keyp.w = true
   }
@@ -129,5 +129,20 @@ $("body").on("keypress",function(event){
   if(event.which == 100){
     keyp.d = true
   }
-  console.log(event.which)
+//   console.log(event.which)
+});
+$("body").on("keyup",function(event){
+  if(event.which == 119){
+    keyp.w = false
+  }
+  if(event.which == 97){
+    keyp.a = false
+  }
+  if(event.which == 115){
+    keyp.s = false
+  }
+  if(event.which == 100){
+    keyp.d = false
+  }
+//   console.log(event.which)
 });
