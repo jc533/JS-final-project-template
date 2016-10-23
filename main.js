@@ -30,7 +30,7 @@ var tower = {
   searchEnemy:function(){
     this.aimingEnemyId = null;
     for(var i = 0;i<enemies.length;i++){
-      distance = math.sqrt(
+      var distance = math.sqrt(
         math.pow(this.x - enemies[i].x,2)+math.pow(this.y - enemies[i].y,2)
       );
      if(distance <= range){
@@ -100,6 +100,7 @@ function draw(){
   }
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towImg,tower.x,tower.y);
+  tower.searchEnemy()
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   ctx.drawImage(rImg,rukia.x,rukia.y);
   ctx.fillText("HP:"+hp,10,50);
