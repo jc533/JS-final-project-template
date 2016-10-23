@@ -32,7 +32,7 @@ var tower = {
         math.pow(this.x - enemies[i].x,2)+math.pow(this.y - enemies[i].y,2)
       );
      if(distance <= range){
-       this.aimingEnemyId:i;
+       this.aimingEnemyId = i;
        return;
      } 
     }
