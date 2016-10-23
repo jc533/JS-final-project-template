@@ -110,13 +110,13 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
     }
-    if(tower.aimingEnemyId != null){
-      var id = tower.aimingEnemyId;
-      ctx.drawImage(croImg,enemies[id].x,enemies[id].y);
-    }
   }
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
+  }
+  if(tower.aimingEnemyId != null){
+    var id = tower.aimingEnemyId;
+    ctx.drawImage(croImg,enemies[id].x,enemies[id].y);
   }
 }
 setInterval(draw,1000/FPS);
