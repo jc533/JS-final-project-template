@@ -79,7 +79,7 @@ function draw(){
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   ctx.drawImage(rImg,rukia.x,rukia.y);
-  ctx.fillText("HP"+hp,10,50);
+  ctx.fillText("HP:"+hp,10,50);
   for(var i = 0;i<enemies.length;i++){
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
