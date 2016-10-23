@@ -1,5 +1,7 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
+ctx.font = "24px Arial"
+ctx.fillStyle = "white"
 var FPS = 60;
 var enemies = [];
 var keyp = {w:false,a:false,s:false,d:false};
@@ -71,6 +73,7 @@ function draw(){
   if(clock%80 == 0){
     enemies.push(new Enemy());
   }
+  ctx.fillText("HP",10,10)
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
