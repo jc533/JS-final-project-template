@@ -20,7 +20,24 @@ rImg.src = "images/rukia.gif";
 var isBuilding = false;;
 var enemyPath = [{x: 96, y: 64},{x: 384, y: 64},{x: 384, y: 192},{x: 224, y: 192},{x: 224, y: 320},{x: 544, y: 320},{x:544,y:96}];
 var cursor = {x:0,y:0};
-var tower = {x:0,y:0};
+var tower = {
+  x:0,
+  y:0,
+  range:96,
+  aimingEnemyId:null,
+  searchEnemy:function(){
+    this.aimingEnemyId:null;
+    for(var i = 0;i<enemies.length;i++){
+      distance = math.sqrt(
+        math.pow(this.x - enemies[i].x,2)+math.pow(this.y - enemies[i].y,2)
+      );
+     if(distance <= range){
+       this.aimingEnemyId:i;
+       return;
+     } 
+    }
+  }
+};
 var rukia = {
   x:0,
   y:0,
