@@ -25,7 +25,10 @@ var rukia = {
   x:0,
   y:0,
   v:[0,0]
-//   move:function(){}
+//   move:function(){
+//     if(keyp.w){
+//        this.v[0]= 64}
+// }
 };
 function Enemy()  {
   this.x = 96;
@@ -84,9 +87,10 @@ function draw(){
   for(var i = 0;i<enemies.length;i++){
     if(enemies[i].hp<1){
       enemies.splice(i,1)    
-    }
+    }else{
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
+    }
   }
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
