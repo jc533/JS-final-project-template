@@ -9,6 +9,8 @@ var keyp = {w:false,a:false,s:false,d:false};
 var clock = 0;
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
+var croImg = document.createElement("img");
+croImg.src = "images/crosshair.png";
 var eImg = document.createElement("img");
 eImg.src = "images/slime.gif";
 var towbtnImg = document.createElement("img");
@@ -107,6 +109,10 @@ function draw(){
     }else{
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
+    }
+    if(tower.aimingEnemyId != null){
+      var id = tower.aimingEnemyId
+      ctx.drawImage(croImg,enemies[id].x,enemies[id].y);
     }
   }
   if(isBuilding == true){
