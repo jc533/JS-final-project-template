@@ -73,11 +73,11 @@ function draw(){
   if(clock%80 == 0){
     enemies.push(new Enemy());
   }
-  ctx.fillText("HP",10,10);
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   ctx.drawImage(rImg,rukia.x,rukia.y);
+  ctx.fillText("HP",10,10);
   for(var i = 0;i<enemies.length;i++){
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
