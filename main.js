@@ -77,7 +77,7 @@ function draw(){
   ctx.drawImage(towImg,tower.x,tower.y);
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   ctx.drawImage(rImg,rukia.x,rukia.y);
-  ctx.fillText("HP",10,10);
+  ctx.fillText("HP",20,20);
   for(var i = 0;i<enemies.length;i++){
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
@@ -89,7 +89,7 @@ function draw(){
 setInterval(draw,1000/FPS);
 $("#game-canvas").on("click",function(){
   if(cursor.x >= 640-64 && cursor.y >= 480-64){
-    console.log("click");
+//     console.log("click");
     if(isBuilding == true){
       isBuilding = false ;
     }else{
