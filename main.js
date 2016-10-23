@@ -24,9 +24,9 @@ var tower = {
   x:0,
   y:0,
   range:96,
-  aimingEnemyId = null;
+  aimingEnemyId:null;
   searchEnemy:function(){
-    this.aimingEnemyId:null;
+    this.aimingEnemyId = null;
     for(var i = 0;i<enemies.length;i++){
       distance = math.sqrt(
         math.pow(this.x - enemies[i].x,2)+math.pow(this.y - enemies[i].y,2)
