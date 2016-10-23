@@ -30,6 +30,7 @@ var rukia = {
 function Enemy()  {
   this.x = 96;
   this.y = 448;
+  this.hp = 100 
   this.speed = 64;
   this.speedx = 0;
   this.speedy = -64;
@@ -81,6 +82,9 @@ function draw(){
   ctx.drawImage(rImg,rukia.x,rukia.y);
   ctx.fillText("HP:"+hp,10,50);
   for(var i = 0;i<enemies.length;i++){
+    if(enemies[i].hp<1){
+      enemies.splice(i,1)    
+    }
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
   }
