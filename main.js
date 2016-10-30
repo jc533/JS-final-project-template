@@ -32,7 +32,7 @@ function Tower(){
   this.shoot = function(id){
     attack(this.x,this.y,enemies[id].x,enemies[id].y);
     enemies[id].hp -= this.damage;
-  },
+  };
   this.fireRate =  0.1;
   this.readToShootTime = 0.1;
   this.damage = 50;
@@ -60,7 +60,7 @@ var rukia = {
   x:0,
   y:0,
   v:[0,0],
-  keyd:function(){
+  key:function(){
     if(keyp.w){
       this.v[1]= -64;}
     else if(keyp.s){
@@ -72,7 +72,7 @@ var rukia = {
   },
   move:function(){
     this.v[0,0]
-    this.keyd();
+    this.key();
     this.x += this.v[0]/FPS;
     this.y += this.v[1]/FPS;
  }
