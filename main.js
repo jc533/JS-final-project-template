@@ -134,8 +134,8 @@ function draw(){
   rukia.move();
   ctx.drawImage(rImg,rukia.x,rukia.y);
   ctx.fillText("HP:"+hp,10,50);
-  ctx.fillText("score:"+score,10,60);
-  ctx.fillText("money:"+money,10,70);
+  ctx.fillText("score:"+score,10,70);
+  ctx.fillText("money:"+money,10,90);
   for(var i = 0;i<enemies.length;i++){
     if(enemies[i].hp<1){
       enemies.splice(i,1); 
