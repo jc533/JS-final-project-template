@@ -200,7 +200,7 @@ $("body").on("keyup",function(event){
     keyp.s = false;
   }
   if(event.which == 68){
-    keyp.d = false;
+    keyp.d = false; 
   }
   console.log(event.which+"up");
 });
