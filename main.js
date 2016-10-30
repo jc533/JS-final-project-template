@@ -56,10 +56,17 @@ var rukia = {
   x:0,
   y:0,
   v:[0,0]
-//   move:function(){
-//     if(keyp.w){
-//        this.v[0]= 64}
-// }
+  move:function(){
+    this.v[0,0]
+     if(keyp.w){
+       this.v[1]= -64;}
+     if(keyp.s){
+       this.v[1]= 64;}
+     if(keyp.a){
+        this.v[0]= -64;}
+     if(keyp.d){
+        this.v[0]= 64;}
+ }
 };
 function Enemy()  {
   this.x = 96;
@@ -122,6 +129,7 @@ function draw(){
   ctx.drawImage(towImg,tower.x,tower.y);
   tower.searchEnemy()
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
+  rukia.move();
   ctx.drawImage(rImg,rukia.x,rukia.y);
   ctx.fillText("HP:"+hp,10,50);
   for(var i = 0;i<enemies.length;i++){
@@ -162,31 +170,31 @@ $("#game-canvas").on("mousemove",function(event){
 });
 $("body").on("keydown",function(event){
   if(event.which == 119){
-    keyp.w = true
+    keyp.w = true;
   }
   if(event.which == 97){
-    keyp.a = true
+    keyp.a = true;
   }
   if(event.which == 115){
-    keyp.s = true
+    keyp.s = true;
   }
   if(event.which == 100){
-    keyp.d = true
+    keyp.d = true;
   }
 //   console.log(event.which)
 });
 $("body").on("keyup",function(event){
   if(event.which == 119){
-    keyp.w = false
+    keyp.w = false;
   }
   if(event.which == 97){
-    keyp.a = false
+    keyp.a = false;
   }
   if(event.which == 115){
-    keyp.s = false
+    keyp.s = false;
   }
   if(event.which == 100){
-    keyp.d = false
+    keyp.d = false;
   }
 //   console.log(event.which)
 });
