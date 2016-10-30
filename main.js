@@ -77,7 +77,7 @@ var rukia = {
     this.y += this.v[1]/FPS;
  }
 };
-function Enemy()  {
+function Enemy(){
   this.x = 96;
   this.y = 448;
   this.hp = 100 
@@ -164,7 +164,7 @@ function draw(){
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
   }
-
+}
 }
 setInterval(draw,1000/FPS);
 $("#game-canvas").on("click",function(){
