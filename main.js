@@ -71,7 +71,7 @@ var rukia = {
       this.v[0]= 64;}
   },
   move:function(){
-    this.v[0,0]
+    this.v[0,0];
     this.key();
     this.x += this.v[0]/FPS;
     this.y += this.v[1]/FPS;
@@ -131,9 +131,7 @@ function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
 }
 function draw(){
   clock++
-  if(clock%80 == 0){
-    enemies.push(new Enemy());
-  }
+  if(clock%80 == 0){enemies.push(new Enemy());}
   ctx.drawImage(bgImg,0,0);
   tower.searchEnemy();
   for(var i = 0;i<towers.length;i++){
@@ -141,12 +139,10 @@ function draw(){
       towers.splice(i,1); 
     }else{
       if(towers[i].aimingEnemyId != null){
-        var id = towers[i].aimingEnemyId;
-        ctx.drawImage(croImg,enemies[id].x,enemies[id].y);
+        var id = towers[i].aimingEnemyId
+        ctx.drawImage(towImg,towers[i].x,towers[i].y);
       }
-      ctx.drawImage(towImg,towers[i].x,towers[i].y);
     }
-  
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   rukia.move();
   ctx.drawImage(rImg,rukia.x,rukia.y);
@@ -190,6 +186,7 @@ $("#game-canvas").on("mousemove",function(event){
   cursor.x = event.offsetX - (event.offsetX % 32);
   cursor.y = event.offsetY - (event.offsetY % 32);
 });
+
 $("body").on("keydown",function(event){
   if(event.which == 87){
     keyp.w = true;
