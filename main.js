@@ -7,6 +7,7 @@ var hp = 100;
 var money = 10
 var score = 0
 var enemies = [];
+var towers = []
 var keyp = {w:false,a:false,s:false,d:false};
 var clock = 0;
 var bgImg = document.createElement("img");
@@ -24,20 +25,20 @@ rImg.src = "images/rukia.gif";
 var isBuilding = false;;
 var enemyPath = [{x: 96, y: 64},{x: 384, y: 64},{x: 384, y: 192},{x: 224, y: 192},{x: 224, y: 320},{x: 544, y: 320},{x:544,y:96}];
 var cursor = {x:0,y:0};
-var tower = {
-  x:0,
-  y:0,
-  shoot:function(id){
+function Tower(){
+  this.x = 0,
+  this.y = 0,
+  this.shoot = function(id){
     attack(this.x,this.y,enemies[id].x,enemies[id].y);
     enemies[id].hp -= this.damage;
   },
-  fireRate: 0.1,
-  readToShootTime: 0.1,
-  damage: 50,
-  range:96,
-  aimingEnemyId:null,
-  searchEnemy:function(){
-    this.readToShootTime -=1/FPS;
+  this.fireRate =  0.1,
+  this.readToShootTime = 0.1,
+  this.damage = 50,
+  this.range = 96,
+  this.aimingEnemyId = null,
+  this.searchEnemy = function(){
+    this.readToShootTime -= 1/FPS;
     this.aimingEnemyId = null;
     for(var i = 0;i<enemies.length;i++){
       var distance = Math.sqrt(
@@ -58,16 +59,19 @@ var rukia = {
   x:0,
   y:0,
   v:[0,0],
-  move:function(){
-    this.v[0,0]
+  keyd:function(){
     if(keyp.w){
       this.v[1]= -64;}
-    if(keyp.s){
+    else if(keyp.s){
       this.v[1]= 64;}
     if(keyp.a){
       this.v[0]= -64;}
-    if(keyp.d){
+    else if(keyp.d){
       this.v[0]= 64;}
+  },
+  move:function(){
+    this.v[0,0]
+    this.keyd();
     this.x += this.v[0]/FPS;
     this.y += this.v[1]/FPS;
  }
@@ -132,6 +136,13 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(towImg,tower.x,tower.y);
   tower.searchEnemy()
+  for(var i = 0;i<towers.length;i++){
+    if(towers[i].hp<1){
+      towers.splice(i,1); 
+    }else{
+    towers[i].move();
+      ctx.drawImage(towImg,towers[i].x,towers[i].y);
+    }
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   rukia.move();
   ctx.drawImage(rImg,rukia.x,rukia.y);
@@ -141,8 +152,8 @@ function draw(){
   for(var i = 0;i<enemies.length;i++){
     if(enemies[i].hp<1){
       enemies.splice(i,1); 
-      score += 10
-      money += 20
+      score += 5
+      money += 10
     }else{
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
@@ -167,8 +178,11 @@ $("#game-canvas").on("click",function(){
     }
   }else{
     if(isBuilding == true){
+      var tower = Tower()
       tower.x = cursor.x;
       tower.y = cursor.y;
+      money -= 10;
+      towers.push(tower);
     }
   }
 });
