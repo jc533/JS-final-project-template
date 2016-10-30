@@ -131,18 +131,14 @@ function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
 }
 function draw(){
   clock++
-  if(clock%80 == 0){enemies.push(new Enemy());}
+  if(clock%80 == 0){
+    enemies.push(new Enemy());
+  }
   ctx.drawImage(bgImg,0,0);
-  tower.searchEnemy();
-  for(var i = 0;i<towers.length;i++){
-    if(towers[i].hp<1){
-      towers.splice(i,1); 
-    }else{
-      if(towers[i].aimingEnemyId != null){
-        var id = towers[i].aimingEnemyId
-        ctx.drawImage(towImg,towers[i].x,towers[i].y);
-      }
-    }
+  for(var i = 0;i<enemies.length;i++){
+    ctx.drawImage(towImg,towers[i].x,towers[i].y);
+    towers[i].searchEnemy()
+  }
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   rukia.move();
   ctx.drawImage(rImg,rukia.x,rukia.y);
@@ -152,8 +148,8 @@ function draw(){
   for(var i = 0;i<enemies.length;i++){
     if(enemies[i].hp<1){
       enemies.splice(i,1); 
-      score += 5;
-      money += 10;
+      score += 10
+      money += 20
     }else{
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
@@ -162,7 +158,14 @@ function draw(){
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
   }
+  for(var i = 0;i<enemies.length;i++){
+    if(towers[i].aimingEnemyId != null){
+      var id = towers[i].aimingEnemyId;
+      ctx.drawImage(croImg,enemies[id].x,enemies[id].y);
+  }
+  }
 }
+
 setInterval(draw,1000/FPS);
 $("#game-canvas").on("click",function(){
   if(cursor.x >= 640-64 && cursor.y >= 480-64){
