@@ -68,8 +68,8 @@ var rukia = {
       this.v[0]= -64;}
     if(keyp.d){
       this.v[0]= 64;}
-    this.x += this.v[0];
-    this.y += this.v[1];
+    this.x += this.v[0]/FPS;
+    this.y += this.v[1]/FPS;
  }
 };
 function Enemy()  {
