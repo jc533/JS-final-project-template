@@ -135,7 +135,6 @@ function draw(){
     enemies.push(new Enemy());
   }
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(towImg,tower.x,tower.y);
   tower.searchEnemy()
   for(var i = 0;i<towers.length;i++){
     if(towers[i].hp<1){
