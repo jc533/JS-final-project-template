@@ -26,7 +26,7 @@ var tower = {
   x:0,
   y:0,
   shoot:function(id){
-    attack(this.x,this.y,emenies[id].x,emenies[id].y);
+    attack(this.x,this.y,enemies[id].x,enemies[id].y);
     enemies[id].hp -= this.damage;
   },
   fireRate: 1,
