@@ -4,6 +4,8 @@ ctx.font = "24px Arial";
 ctx.fillStyle = "white";
 var FPS = 60;
 var hp = 100;
+var money = 10
+var score = 0
 var enemies = [];
 var keyp = {w:false,a:false,s:false,d:false};
 var clock = 0;
@@ -29,8 +31,8 @@ var tower = {
     attack(this.x,this.y,enemies[id].x,enemies[id].y);
     enemies[id].hp -= this.damage;
   },
-  fireRate: 1,
-  readToShootTime: 1,
+  fireRate: 0.1,
+  readToShootTime: 0.1,
   damage: 50,
   range:96,
   aimingEnemyId:null,
@@ -129,12 +131,16 @@ function draw(){
   ctx.drawImage(towImg,tower.x,tower.y);
   tower.searchEnemy()
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
-  rukia.move(keyp);
+//   rukia.move(keyp);
   ctx.drawImage(rImg,rukia.x,rukia.y);
   ctx.fillText("HP:"+hp,10,50);
+  ctx.fillText("score:"+score,10,60);
+  ctx.fillText("money:"+money,10,70);
   for(var i = 0;i<enemies.length;i++){
     if(enemies[i].hp<1){
-      enemies.splice(i,1);    
+      enemies.splice(i,1); 
+      score += 10
+      money += 20
     }else{
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
