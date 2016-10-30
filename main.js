@@ -25,9 +25,17 @@ var cursor = {x:0,y:0};
 var tower = {
   x:0,
   y:0,
+  shoot:function(id){
+    attack(this.x,this.y,emenies[id].x,emenies[id].y);
+    emenies[id].hp -= this.damage;
+  },
+  fireRate: 1,
+  readToShootTime: 1,
+  damage: 50,
   range:96,
   aimingEnemyId:null,
   searchEnemy:function(){
+    this.readToShootTime -=1/FPS;
     this.aimingEnemyId = null;
     for(var i = 0;i<enemies.length;i++){
       var distance = Math.sqrt(
@@ -35,6 +43,10 @@ var tower = {
       );
      if(distance <= this.range){
        this.aimingEnemyId = i;
+       if(this.readToShootTime <= 0){
+         this.shoot(this.aimingEnemyId);
+         this.readToShootTime = this.fireRate
+       }
        return;
      } 
     }
@@ -85,6 +97,14 @@ function Enemy()  {
   }  
 };
 // enemies.push(new Enemy());
+function attack(x1,y1,x2,y2){
+  ctx.beginPath();
+  ctx.moveTo(x1,y1);
+  ctx.lineTo(x2,y2);
+  ctx.strokeStyle = rgb(100,0,0);
+  ctx.lineWidth = 30;
+  ctx.stroke();
+}
 function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
   if(enemyX >= pathX - speedX && enemyX <= pathX + speedX){
     if(enemyY >= pathY - speedY && enemyY <= pathY + speedY){
