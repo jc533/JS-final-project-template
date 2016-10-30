@@ -175,31 +175,31 @@ $("#game-canvas").on("mousemove",function(event){
   cursor.y = event.offsetY - (event.offsetY % 32);
 });
 $("body").on("keydown",function(event){
-  if(event.which == 119){
+  if(event.which == 87){
     keyp.w = true;
   }
-  if(event.which == 97){
+  if(event.which == 65){
     keyp.a = true;
   }
-  if(event.which == 115){
+  if(event.which == 83){
     keyp.s = true;
   }
-  if(event.which == 100){
+  if(event.which == 68){
     keyp.d = true;
   }
   console.log(event.which+"down");
 });
 $("body").on("keyup",function(event){
-  if(event.which == 119){
+  if(event.which == 87){
     keyp.w = false;
   }
-  if(event.which == 97){
+  if(event.which == 65){
     keyp.a = false;
   }
-  if(event.which == 115){
+  if(event.which == 83){
     keyp.s = false;
   }
-  if(event.which == 100){
+  if(event.which == 68){
     keyp.d = false;
   }
   console.log(event.which+"up");
