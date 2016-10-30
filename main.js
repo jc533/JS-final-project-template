@@ -58,14 +58,14 @@ var rukia = {
   v:[0,0]
   move:function(){
     this.v[0,0]
-     if(keyp.w){
-       this.v[1]= -64;}
-     if(keyp.s){
-       this.v[1]= 64;}
-     if(keyp.a){
-        this.v[0]= -64;}
-     if(keyp.d){
-        this.v[0]= 64;}
+    if(keyp.w){
+      this.v[1]= -64;}
+    if(keyp.s){
+      this.v[1]= 64;}
+    if(keyp.a){
+      this.v[0]= -64;}
+    if(keyp.d){
+      this.v[0]= 64;}
  }
 };
 function Enemy()  {
