@@ -143,8 +143,10 @@ function draw(){
       if(towers[i].aimingEnemyId != null){
         var id = towers[i].aimingEnemyId;
         ctx.drawImage(croImg,enemies[id].x,enemies[id].y);
+      }
       ctx.drawImage(towImg,towers[i].x,towers[i].y);
     }
+  
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   rukia.move();
   ctx.drawImage(rImg,rukia.x,rukia.y);
@@ -164,7 +166,6 @@ function draw(){
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
   }
-}
 }
 setInterval(draw,1000/FPS);
 $("#game-canvas").on("click",function(){
