@@ -187,7 +187,7 @@ $("body").on("keydown",function(event){
   if(event.which == 100){
     keyp.d = true;
   }
-//   console.log(event.which)
+  console.log(event.which+"down");
 });
 $("body").on("keyup",function(event){
   if(event.which == 119){
@@ -202,5 +202,5 @@ $("body").on("keyup",function(event){
   if(event.which == 100){
     keyp.d = false;
   }
-//   console.log(event.which)
+  console.log(event.which+"up");
 });
