@@ -135,7 +135,7 @@ function draw(){
     enemies.push(new Enemy());
   }
   ctx.drawImage(bgImg,0,0);
-  for(var i = 0;i<enemies.length;i++){
+  for(var i = 0;i<towers.length;i++){
     ctx.drawImage(towImg,towers[i].x,towers[i].y);
     towers[i].searchEnemy()
   }
@@ -158,7 +158,7 @@ function draw(){
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
   }
-  for(var i = 0;i<enemies.length;i++){
+  for(var i = 0;i<towers.length;i++){
     if(towers[i].aimingEnemyId != null){
       var id = towers[i].aimingEnemyId;
       ctx.drawImage(croImg,enemies[id].x,enemies[id].y);
