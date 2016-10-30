@@ -56,7 +56,7 @@ var rukia = {
   x:0,
   y:0,
   v:[0,0]
-  move:function(){
+  move:function(keyp){
     this.v[0,0]
     if(keyp.w){
       this.v[1]= -64;}
@@ -129,7 +129,7 @@ function draw(){
   ctx.drawImage(towImg,tower.x,tower.y);
   tower.searchEnemy()
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
-  rukia.move();
+  rukia.move(keyp);
   ctx.drawImage(rImg,rukia.x,rukia.y);
   ctx.fillText("HP:"+hp,10,50);
   for(var i = 0;i<enemies.length;i++){
