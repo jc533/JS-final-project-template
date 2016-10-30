@@ -135,7 +135,7 @@ function draw(){
     enemies.push(new Enemy());
   }
   ctx.drawImage(bgImg,0,0);
-  tower.searchEnemy()
+  tower.searchEnemy();
   for(var i = 0;i<towers.length;i++){
     if(towers[i].hp<1){
       towers.splice(i,1); 
@@ -154,8 +154,8 @@ function draw(){
   for(var i = 0;i<enemies.length;i++){
     if(enemies[i].hp<1){
       enemies.splice(i,1); 
-      score += 5
-      money += 10
+      score += 5;
+      money += 10;
     }else{
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
@@ -177,7 +177,7 @@ $("#game-canvas").on("click",function(){
     }
   }else{
     if(isBuilding == true){
-      var tower = Tower()
+      var tower = new Tower()
       tower.x = cursor.x;
       tower.y = cursor.y;
       money -= 10;
