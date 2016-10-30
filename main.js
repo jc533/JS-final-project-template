@@ -26,17 +26,18 @@ var isBuilding = false;;
 var enemyPath = [{x: 96, y: 64},{x: 384, y: 64},{x: 384, y: 192},{x: 224, y: 192},{x: 224, y: 320},{x: 544, y: 320},{x:544,y:96}];
 var cursor = {x:0,y:0};
 function Tower(){
-  this.x = 0,
-  this.y = 0,
+  this.x = 0;
+  this.y = 0;
+  this.hp = 100;
   this.shoot = function(id){
     attack(this.x,this.y,enemies[id].x,enemies[id].y);
     enemies[id].hp -= this.damage;
   },
-  this.fireRate =  0.1,
-  this.readToShootTime = 0.1,
-  this.damage = 50,
-  this.range = 96,
-  this.aimingEnemyId = null,
+  this.fireRate =  0.1;
+  this.readToShootTime = 0.1;
+  this.damage = 50;
+  this.range = 96;
+  this.aimingEnemyId = null;
   this.searchEnemy = function(){
     this.readToShootTime -= 1/FPS;
     this.aimingEnemyId = null;
@@ -140,7 +141,9 @@ function draw(){
     if(towers[i].hp<1){
       towers.splice(i,1); 
     }else{
-    towers[i].move();
+      if(towers[i].aimingEnemyId != null){
+        var id = towers[i].aimingEnemyId;
+        ctx.drawImage(croImg,enemies[id].x,enemies[id].y);
       ctx.drawImage(towImg,towers[i].x,towers[i].y);
     }
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
@@ -162,10 +165,7 @@ function draw(){
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
   }
-  if(tower.aimingEnemyId != null){
-    var id = tower.aimingEnemyId;
-    ctx.drawImage(croImg,enemies[id].x,enemies[id].y);
-  }
+
 }
 setInterval(draw,1000/FPS);
 $("#game-canvas").on("click",function(){
