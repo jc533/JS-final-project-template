@@ -35,7 +35,7 @@ function Tower(){
   };
   this.fireRate = 1;
   this.readToShootTime = 1;
-  this.damage = 50;
+  this.damage = 10;
   this.range = 96;
   this.aimingEnemyId = null;
   this.searchEnemy = function(){
