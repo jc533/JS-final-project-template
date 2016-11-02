@@ -71,7 +71,7 @@ var rukia = {
       this.v[0]= 64;}
   },
   move:function(){
-    this.v[0,0];
+    this.v = [0,0];
 //     console.log(this.v)
     this.key();
     this.x += this.v[0]/FPS;
