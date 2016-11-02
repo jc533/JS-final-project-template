@@ -61,18 +61,18 @@ var rukia = {
   y:0,
   v:[0,0],
   key:function(){
-    if(keyp.w){
+    if(keyp.w == true){
       this.v[1]= -64;
-    }else if(keyp.s){
+    }else if(keyp.s == true){
       this.v[1]= 64;
-    }if(keyp.a){
+    }if(keyp.a == true){
       this.v[0]= -64;
-    }else if(keyp.d){
+    }else if(keyp.d == true){
       this.v[0]= 64;}
   },
   move:function(){
     this.v[0,0];
-    console.log(this.v)
+//     console.log(this.v)
     this.key();
     this.x += this.v[0]/FPS;
     this.y += this.v[1]/FPS;
