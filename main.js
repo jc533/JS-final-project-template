@@ -8,7 +8,7 @@ var money = 10
 var score = 0
 var enemies = [];
 var towers = []
-var keyp = {w:false,a:false,s:false,d:false};
+var keyp = {w:false,a:false,s:false,d:false,space:false};
 var clock = 0;
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
@@ -89,6 +89,9 @@ var rukia = {
       this.v[0]= -64;
     }else if(keyp.d == true){
       this.v[0]= 64;}
+    if(key.space){
+      this.searchEnemy()
+    }
   },
   move:function(){
     this.v = [0,0];
@@ -224,6 +227,9 @@ $("body").on("keydown",function(event){
   if(event.which == 68){
     keyp.d = true;
   }
+  if(event.which == 32){
+    keyp.space = true;
+  }
   console.log(event.which+"down");
 });
 $("body").on("keyup",function(event){
@@ -238,6 +244,9 @@ $("body").on("keyup",function(event){
   }
   if(event.which == 68){
     keyp.d = false; 
+  }
+  if(event.which == 32){
+    keyp.space = false;
   }
   console.log(event.which+"up");
 });
