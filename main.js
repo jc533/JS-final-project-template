@@ -89,7 +89,7 @@ var rukia = {
       this.v[0]= -64;
     }else if(keyp.d == true){
       this.v[0]= 64;}
-    if(key.space){
+    if(keyp.space){
       this.searchEnemy()
     }
   },
