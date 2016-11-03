@@ -60,6 +60,26 @@ var rukia = {
   x:0,
   y:0,
   v:[0,0],
+  shoot: function(id){
+    attack(this.x,this.y,enemies[id].x,enemies[id].y);
+    enemies[id].hp -= this.damage;
+  },
+  aimingEnemyId: null,
+  damage: 50,
+  searchEnemy: function(){
+    this.readToShootTime -= 1/FPS;
+    this.aimingEnemyId = null;
+    for(var i = 0;i<enemies.length;i++){
+      var distance = Math.sqrt(
+        Math.pow(this.x - enemies[i].x,2) + Math.pow(this.y - enemies[i].y,2)
+      );
+     if(distance <= this.range){
+       this.aimingEnemyId = i;
+        this.shoot(this.aimingEnemyId);
+     }
+       return;
+    }
+    }, 
   key:function(){
     if(keyp.w == true){
       this.v[1]= -64;
