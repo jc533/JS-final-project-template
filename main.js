@@ -157,9 +157,9 @@ function draw(){
   clock++
   if(clock%80 == 0){
     var enemy = new Enemy()
-    if(clock/80>1){
-      enemy.hp = 10 * (clock/80)
-      enemy.speed = 64 * (clock/80)
+    if(clock/80>1.0){
+      enemy.hp += 10
+      enemy.speed = 64 * (clock/160)
       console.log(enemy.speed)
       enemy.speedy = enemy.speed*-1
     }
