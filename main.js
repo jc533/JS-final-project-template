@@ -119,16 +119,16 @@ function Enemy(){
       if(this.x == enemyPath[this.pathDes].x){
         this.speedx = 0;
       }else if(this.x < enemyPath[this.pathDes].x){
-        this.speedx = 64;
+        this.speedx = this.speed;
       }else if(this.x > enemyPath[this.pathDes].x){
-        this.speedx = -64;
+        this.speedx = this.speed * -1;
       }
       if(this.y == enemyPath[this.pathDes].y){
         this.speedy = 0;
       }else if(this.y < enemyPath[this.pathDes].y){
-        this.speedy = 64;
+        this.speedy = this.speed;
       }else if(this.y > enemyPath[this.pathDes].y){
-        this.speedy = -64;
+        this.speedy = this.speed * -1;
       }
     }else{
       this.x += this.speedx/FPS;
@@ -156,7 +156,13 @@ function isCollided(pathX,pathY,enemyX,enemyY,speedX,speedY){
 function draw(){
   clock++
   if(clock%80 == 0){
-    enemies.push(new Enemy());
+    var enemy = new Enemy()
+    if(clock/80>1){
+      enemy.hp += 10 * (clock/80)
+      enemy.speed = 64 * (clock/80)
+      enemy.speedy = enemy.speed*-1
+    }
+    enemies.push(enemy);
   }
   ctx.drawImage(bgImg,0,0);
   for(var i = 0;i<towers.length;i++){
