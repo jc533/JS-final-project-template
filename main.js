@@ -138,7 +138,7 @@ function Enemy(){
       this.y = enemyPath[this.pathDes].y;
 //       console.log(this.x,this.y);
       this.pathDes ++;
-      if(this.pathDes == enemyPath.length - 1){
+      if(this.pathDes == enemyPath.length){
         this.hp = 0;
         hp -= 10;
         money -= 5;
