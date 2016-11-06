@@ -30,7 +30,7 @@ function Tower(){
   this.y = 0;
   this.hp = 100;
   this.shoot = function(id){
-    attack(this.x,this.y,enemies[id].x,enemies[id].y,"green");
+    attack(this.x,this.y,enemies[id].x,enemies[id].y,"yellow");
     enemies[id].hp -= this.damage;
   };
   this.fireRate = 1;
@@ -189,8 +189,12 @@ function draw(){
   }
   ctx.drawImage(bgImg,0,0);
   for(var i = 0;i<towers.length;i++){
-    ctx.drawImage(towImg,towers[i].x,towers[i].y);
-    towers[i].searchEnemy()
+    if(towers[i].hp<1){
+      towers.splice(i,1);
+    }else{
+      ctx.drawImage(towImg,towers[i].x,towers[i].y);
+      towers[i].searchEnemy()
+    }
   }
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   rukia.move();
