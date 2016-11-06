@@ -217,6 +217,12 @@ function draw(){
       ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
     }
   }
+  if(hp<1){
+    ctx.font = "50px Arial";
+    ctx.fillText("Gomeover",50,50);
+    ctx.fillText("You got" + score,50,150);
+    clearInterval(intervalId);
+  }
   ctx.fillText("HP:"+hp,10,50);
   ctx.fillText("score:"+score,10,70);
   ctx.fillText("money:"+money,10,90);
@@ -231,7 +237,7 @@ function draw(){
   }
 }
 
-setInterval(draw,1000/FPS);
+var intervalId = setInterval(draw,1000/FPS);
 $("#game-canvas").on("click",function(){
   if(cursor.x >= 640-64 && cursor.y >= 480-64){
 //     console.log("click");
