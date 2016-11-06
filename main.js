@@ -212,9 +212,9 @@ function draw(){
       score += 10
       money += 5
     }else{
-    enemies[i].move();
-    enemies[i].searchTower()
-    ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
+      enemies[i].move();
+      enemies[i].searchTower()
+      ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
     }
   }
   ctx.fillText("HP:"+hp,10,50);
