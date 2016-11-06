@@ -222,6 +222,7 @@ function draw(){
     ctx.fillText("Gomeover",50,50);
     ctx.fillText("You got" + score,50,150);
     clearInterval(intervalId);
+    return;
   }
   ctx.fillText("HP:"+hp,10,50);
   ctx.fillText("score:"+score,10,70);
