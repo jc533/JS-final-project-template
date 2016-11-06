@@ -28,7 +28,7 @@ var cursor = {x:0,y:0};
 function Tower(){
   this.x = 0;
   this.y = 0;
-  this.hp = 100;
+  this.hp = 96;
   this.shoot = function(id){
     attack(this.x,this.y,enemies[id].x,enemies[id].y,"yellow");
     enemies[id].hp -= this.damage;
@@ -66,7 +66,7 @@ var rukia = {
   },
   aimingEnemyId: null,
   damage: 2,
-  range: 100,
+  range: 1000,
   searchEnemy: function(){
     this.aimingEnemyId = null;
     for(var i = 0;i<enemies.length;i++){
