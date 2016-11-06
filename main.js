@@ -30,7 +30,7 @@ function Tower(){
   this.y = 0;
   this.hp = 100;
   this.shoot = function(id){
-    attack(this.x,this.y,enemies[id].x,enemies[id].y);
+    attack(this.x,this.y,enemies[id].x,enemies[id].y,"green");
     enemies[id].hp -= this.damage;
   };
   this.fireRate = 1;
@@ -61,7 +61,7 @@ var rukia = {
   y:0,
   v:[0,0],
   shoot: function(id){
-    attack(this.x,this.y,enemies[id].x,enemies[id].y);
+    attack(this.x,this.y,enemies[id].x,enemies[id].y,"blue");
     enemies[id].hp -= this.damage;
   },
   aimingEnemyId: null,
@@ -106,11 +106,31 @@ var rukia = {
 function Enemy(){
   this.x = 96;
   this.y = 448;
-  this.hp = 100 
+  this.hp = 100; 
   this.speed = 64;
   this.speedx = 0;
   this.speedy = -64;
-  this.pathDes = 0;
+  this.damage  = 5;
+  this.pathDes = 0;  
+  this.shoot = function(id){
+    attack(this.x,this.y,towers[id].x,towers[id].y,"red");
+    towers[id].hp -= this.damage;
+  };
+  this.aimingEnemyId = null;
+  this.range = 50;
+  this.searchTower = function(){
+    this.aimingEnemyId = null;
+    for(var i = 0;i<towers.length;i++){
+      var distance = Math.sqrt(
+        Math.pow(this.x - towers[i].x,2) + Math.pow(this.y - towers[i].y,2)
+      );
+     if(distance <= this.range){
+       this.aimingEnemyId = i;
+       this.shoot(this.aimingEnemyId);
+     }
+       return;
+    }
+    };
   this.move = function(){
 //     console.log(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS))
     if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS) === true){
@@ -139,11 +159,11 @@ function Enemy(){
   }  
 };
 // enemies.push(new Enemy());
-function attack(x1,y1,x2,y2){
+function attack(x1,y1,x2,y2,color){
   ctx.beginPath();
   ctx.moveTo(x1,y1);
   ctx.lineTo(x2,y2);
-  ctx.strokeStyle = "red";
+  ctx.strokeStyle = color;
   ctx.lineWidth = 3;
   ctx.stroke();
 }
@@ -185,6 +205,7 @@ function draw(){
       money += 5
     }else{
     enemies[i].move();
+    enemies[i].searchTower()
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
     }
   }
