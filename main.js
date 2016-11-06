@@ -138,6 +138,13 @@ function Enemy(){
       this.y = enemyPath[this.pathDes].y;
 //       console.log(this.x,this.y);
       this.pathDes ++;
+      if(this.pathDes == enemyPath.length - 1){
+        this.hp = 0;
+        hp -= 10;
+        money -= 5;
+        score -= 10;
+        return;
+      }
       if(this.x == enemyPath[this.pathDes].x){
         this.speedx = 0;
       }else if(this.x < enemyPath[this.pathDes].x){
@@ -199,9 +206,6 @@ function draw(){
   ctx.drawImage(towbtnImg,640-64,480-64,64,64);
   rukia.move();
   ctx.drawImage(rImg,rukia.x,rukia.y);
-  ctx.fillText("HP:"+hp,10,50);
-  ctx.fillText("score:"+score,10,70);
-  ctx.fillText("money:"+money,10,90);
   for(var i = 0;i<enemies.length;i++){
     if(enemies[i].hp<1){
       enemies.splice(i,1); 
@@ -212,6 +216,9 @@ function draw(){
     enemies[i].searchTower()
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
     }
+  ctx.fillText("HP:"+hp,10,50);
+  ctx.fillText("score:"+score,10,70);
+  ctx.fillText("money:"+money,10,90);
   }
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
