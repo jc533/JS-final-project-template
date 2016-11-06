@@ -66,8 +66,8 @@ var rukia = {
   },
   aimingEnemyId: null,
   damage: 50,
+  range: 1000,
   searchEnemy: function(){
-    this.readToShootTime -= 1/FPS;
     this.aimingEnemyId = null;
     for(var i = 0;i<enemies.length;i++){
       var distance = Math.sqrt(
@@ -90,6 +90,7 @@ var rukia = {
     }else if(keyp.d == true){
       this.v[0]= 64;}
     if(keyp.space == true){
+      console.log("attack")
       this.searchEnemy()
     }
   },
