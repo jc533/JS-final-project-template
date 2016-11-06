@@ -4,7 +4,7 @@ ctx.font = "24px Arial";
 ctx.fillStyle = "white";
 var FPS = 60;
 var hp = 100;
-var money = 10
+var money = 100
 var score = 0
 var enemies = [];
 var towers = []
@@ -89,7 +89,7 @@ var rukia = {
       this.v[0]= -64;
     }else if(keyp.d == true){
       this.v[0]= 64;}
-    if(keyp.space){
+    if(keyp.space == true){
       this.searchEnemy()
     }
   },
@@ -207,7 +207,7 @@ $("#game-canvas").on("click",function(){
       isBuilding = true;
     }
   }else{
-    if(isBuilding == true){
+    if(isBuilding == true && money >= 10){
       var tower = new Tower()
       tower.x = cursor.x;
       tower.y = cursor.y;
