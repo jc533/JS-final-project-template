@@ -65,7 +65,7 @@ var rukia = {
     enemies[id].hp -= this.damage;
   },
   aimingEnemyId: null,
-  damage: 5,
+  damage: 2,
   range: 100,
   searchEnemy: function(){
     this.aimingEnemyId = null;
@@ -110,7 +110,7 @@ function Enemy(){
   this.speed = 64;
   this.speedx = 0;
   this.speedy = -64;
-  this.damage  = 5;
+  this.damage  = 1;
   this.pathDes = 0;  
   this.shoot = function(id){
     attack(this.x,this.y,towers[id].x,towers[id].y,"red");
@@ -181,7 +181,7 @@ function draw(){
     var enemy = new Enemy()
     if(clock/400>1){
       enemy.hp += 10*clock/400
-      enemy.speed = 64*clock/400
+//       enemy.speed = 64*clock/400
       console.log(clock/80)
       enemy.speedy = enemy.speed*-1
     }
