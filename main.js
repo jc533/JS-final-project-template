@@ -4,7 +4,7 @@ ctx.font = "24px Arial";
 ctx.fillStyle = "white";
 var FPS = 60;
 var hp = 100;
-var money = 100
+var money = 50
 var score = 0
 var enemies = [];
 var towers = []
@@ -65,8 +65,8 @@ var rukia = {
     enemies[id].hp -= this.damage;
   },
   aimingEnemyId: null,
-  damage: 50,
-  range: 1000,
+  damage: 1,
+  range: 90,
   searchEnemy: function(){
     this.aimingEnemyId = null;
     for(var i = 0;i<enemies.length;i++){
@@ -182,7 +182,7 @@ function draw(){
     if(enemies[i].hp<1){
       enemies.splice(i,1); 
       score += 10
-      money += 20
+      money += 5
     }else{
     enemies[i].move();
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
