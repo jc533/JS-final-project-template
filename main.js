@@ -75,7 +75,7 @@ var rukia = {
       );
      if(distance <= this.range){
        this.aimingEnemyId = i;
-        this.shoot(this.aimingEnemyId);
+       this.shoot(this.aimingEnemyId);
      }
        return;
     }
@@ -97,6 +97,7 @@ var rukia = {
   move:function(){
     this.v = [0,0];
 //     console.log(this.v)
+    console.log("space "+keyp.space)
     this.key();
     this.x += this.v[0]/FPS;
     this.y += this.v[1]/FPS;
