@@ -216,10 +216,10 @@ function draw(){
     enemies[i].searchTower()
     ctx.drawImage(eImg,enemies[i].x,enemies[i].y);
     }
+  }
   ctx.fillText("HP:"+hp,10,50);
   ctx.fillText("score:"+score,10,70);
   ctx.fillText("money:"+money,10,90);
-  }
   if(isBuilding == true){
     ctx.drawImage(towImg,cursor.x,cursor.y);
   }
