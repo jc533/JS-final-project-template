@@ -65,8 +65,8 @@ var rukia = {
     enemies[id].hp -= this.damage;
   },
   aimingEnemyId: null,
-  damage: 1,
-  range: 90,
+  damage: 5,
+  range: 100,
   searchEnemy: function(){
     this.aimingEnemyId = null;
     for(var i = 0;i<enemies.length;i++){
